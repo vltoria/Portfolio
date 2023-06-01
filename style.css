@@ -39,9 +39,10 @@ html{
 body{
     display: grid;
     grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
-    grid-template-rows: repeat(11, 7em);
+    grid-template-rows: repeat(13, 7em);
     gap: 1vw;
     background-image: var(--background-light);
+    transition: 0.2s ease-in-out;
 }
 
 #header-principal{
@@ -62,7 +63,8 @@ body{
     height: fit-content;
     text-indent: 1vw;
     font-family: var(--font-subtitle);
-    font-size: 1.5em;
+    font-size: 1.6em;
+    text-decoration: none;
     color: #fff;
     padding: 0.2vw;
 }
@@ -163,6 +165,7 @@ button{
     padding: 0.3vw;
     font-family: var(--font-normal);
     font-size: 0.9em;
+    color: var(--roxo-escuro);
 }
 
 button:hover{
@@ -252,12 +255,74 @@ strong{
 }
 #projetos > div > div:hover{
     box-shadow: 0px 0px 15px #9B3FDB;
-    transform: scale(1.08);
+    width: 180%;
     transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+#projetos > div > div:hover > img{
+    width: 20%;
+    height: 20%;
+    align-self: center top;
+}
+
+#projetos > div > div:hover > img:hover{
+    transform: scale(4.9);
+    position: relative;
+    transform-origin: left top;
+    transition: 0.3s ease-in-out;
+}
+
+#projetos > div > div:hover > .descrição{
+    align-self: center;
 }
 
 #competencias{
-    grid-area: 12/2/13/5;
+    grid-area: 12/2/14/5;
+}
+
+#barras-progresso{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#barras-progresso > div{
+    width: 100%;
+    height: 100%;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.barra{
+    width: 100%;
+    height: 30px;
+    background-color: var(--roxo-claro);
+    border-radius: 15px;
+}
+
+.progresso{
+    background-color: var(--roxo-medio);
+    height: 30px;
+    border-radius: 15px;
+}
+#html{
+    width: 85%;
+}
+
+#css{
+    width: 70%;
+}
+
+#js{
+    width: 20%;
+}
+
+#ing{
+    width: 80%;
 }
 
 /* Botão + Modo Escuro*/
@@ -311,7 +376,13 @@ strong{
 /* Classes modo escuro*/
 .dark{
     background-image: var(--background-dark);
-    transition: 0.3s;
+    transition: 0.2s ease-in-out;
+}
+
+.dark#header-principal{
+    background-image: var(--header-dark);
+    background-position: center center;
+    border: 1px solid var(--roxo-claro);
 }
 
 .dark-caixa#inicio, .dark-caixa#aside, .dark-caixa#sobremim, .dark-caixa#projetos, .dark-caixa#competencias{
